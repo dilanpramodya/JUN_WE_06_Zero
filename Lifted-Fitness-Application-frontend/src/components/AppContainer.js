@@ -13,6 +13,7 @@ import Profile from "./Profile";
 import MyProfile from "./MyProfile";
 import AllAccounts from "./AllAccounts";
 import UnauthorizedPage from "./UnauthorizedPage";
+import  Mealplan from "./MealPlan";
 
 function AppContainer() {
   return (
@@ -23,6 +24,7 @@ function AppContainer() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/newsfeed" element={<NewsFeed />}>
           <Route path="" element={<NewsFeedContent />} />
+          <Route path="mealplan" element={<Mealplan/>} />
           <Route path="following" element={<FollowingList />} />
           <Route path="follower" element={<FollowerList />} />
           <Route path="profile" element={<Profile />} />
