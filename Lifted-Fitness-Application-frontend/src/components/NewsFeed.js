@@ -9,6 +9,7 @@ import {
   RiBaseStationLine,
   RiFolderUserLine,
   RiLogoutBoxLine,
+  RiPassportLine
 } from "react-icons/ri";
 
 import styles from "./styles/NewsFeed.module.css";
@@ -70,6 +71,16 @@ function NewsFeed() {
                           <span>
                             {" "}
                             <RiNewspaperLine /> Newsfeed
+                          </span>
+                        </li>
+                      </Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                      <Link to="" className="text-decoration-none">
+                        <li className="list-group-item fs-5 py-3 text-success shadow">
+                          <span>
+                            {" "}
+                            <RiPassportLine /> Meal Plan
                           </span>
                         </li>
                       </Link>
