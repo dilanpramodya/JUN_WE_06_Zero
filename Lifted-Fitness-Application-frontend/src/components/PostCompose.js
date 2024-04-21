@@ -57,7 +57,7 @@ function PostCompose() {
   function handleContentChange(e) {
     setPostContent(e.target.value);
     setPostContentCount(e.target.value.length);
-    if (postContentCount === 0 || postContentCount > 200) {
+    if (postContentCount === 0 || postContentCount > 700) {
       setDisablePostButton(true);
     } else {
       setDisablePostButton(false);
@@ -187,7 +187,7 @@ function PostCompose() {
             />
           </Form.Group>
           <div className="d-flex justify-content-end align-items-center">
-            <span>Characters: {postContentCount}/200</span>
+            <span>Characters: {postContentCount}/700</span>
             <Button
               onClick={handleCreatePost}
               variant="success"
