@@ -98,7 +98,7 @@ function NewsFeed() {
                       <Link to="follower" className="text-decoration-none">
                         <li className="list-group-item fs-5 py-3 text-success shadow">
                           <span>
-                            <RiBaseStationLine /> Followers
+                            <RiBaseStationLine />Followers
                           </span>
                         </li>
                       </Link>
