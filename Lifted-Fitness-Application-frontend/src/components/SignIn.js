@@ -14,6 +14,7 @@ import styles from "./styles/SignIn.module.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function SignIn() {
   const [resData, setResData] = useState(null);
@@ -34,23 +35,28 @@ function SignIn() {
         password: inputData.password,
       },
     });
-    
+
     if (response.data !== null && response.data.status === "fail") {
       showWarningToast(response.data.message);
     }
-    
+
     if (response.data !== null && response.data.status === "success") {
       setResData(response.data);
-      
+
       localStorage.setItem("psnUserId", response.data.payload.user.id);
-      localStorage.setItem("psnUserFirstName", response.data.payload.user.firstName);
-      localStorage.setItem("psnUserLastName", response.data.payload.user.lastName);
+      localStorage.setItem(
+        "psnUserFirstName",
+        response.data.payload.user.firstName
+      );
+      localStorage.setItem(
+        "psnUserLastName",
+        response.data.payload.user.lastName
+      );
       localStorage.setItem("psnUserEmail", response.data.payload.user.email);
-  
+
       localStorage.setItem("psnToken", response.data.payload.token);
       navigate("/newsfeed");
     }
-
   }
 
   function showWarningToast(inputMessage) {
@@ -76,7 +82,7 @@ function SignIn() {
           email: "",
           password: "",
         }}
-        onSubmit={(values, {setSubmitting}) => {
+        onSubmit={(values, { setSubmitting }) => {
           postSignInInfo(values);
           setSubmitting(false);
         }}
@@ -128,7 +134,13 @@ function SignIn() {
                   Please enter your password
                 </Form.Control.Feedback>
               </Form.Group>
+                        <Row className="d-flex justify-content-center align-items-center">
+                          <Link to="/forgotpassword" className="text-decoration-none">
+                            Forgot Password
+                          </Link>
+                        </Row>
             </Row>
+
             <Button type="submit" variant="success">
               Sign In <RiLoginBoxLine />
             </Button>

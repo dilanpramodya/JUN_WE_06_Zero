@@ -15,7 +15,7 @@ function FollowingList() {
     if (localStorage.getItem("psnToken") === null) {
       navigate("/unauthorized");
     }
-    
+
     dispatch(getFollowingAccounts());
   }, []);
 
